@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+.first-view{
+  height: calc(100vh - 110px); /*100vh: ブラウザの高さ100%*/
+  background-image: url(../images/index/bg-main.jpg);
+  background-repeat: no-repeat; /*背景を繰り返さない*/
+  background-position: center center; /*上下左右中央に配置*/
+  background-size: cover; /*縦横比を維持したままサイズを調整*/
+  display: flex; /*要素を横並びに配置*/
+  align-items: center; /*(要素の並びと逆方向の)上下中央に配置*/
+}
+
+.first-view-text{
+  width: 100%;
+  max-width: 1200px; /*最大の横幅を1200pxに固定*/
+  margin-left: auto; /* --左右中央に配置-- */
+  margin-right: auto; 
+  padding-left: 40px;
+  padding-right: 80px; /*----------------- */
+  color: #ffffff; /*文字色の変更*/
+  font-weight: bold; /*文字の太さを変更*/
+  text-shadow: 1px 1px 10px #4b2c14; /*文字に影を付ける*/
+}
+
+.first-view-text h1{
+  font-family: 'Montserrat', sans-serif; /*文字フォントの変更*/
+  font-size: 56px; 
+  line-height: 72px; /*行間を変更*/
+}
+
+.first-view-text p{
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.lead{
+  max-width: 1200px;
+  margin: 60px auto; /*margin: 上下 左右;  (P.181参照)*/
+}
+
+.lead p{
+  line-height: 2; /*行間を文字サイズの2倍に*/
+  text-align: center; /*(要素の並びと逆方向の)左右中央に配置*/
+}
+
+.link-button-area{
+  text-align: center;
+  margin-top: 40px;
+}
+
+.link-button{
+  background-color: #f4dd64;
+  display: inline-block;
+  min-width: 180px; /*最低180pxの横幅で表示*/
+  line-height: 48px;
+  border-radius: 24px; /*角丸にする*/
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+/* inline, block, inline-blockの違い
+    inline: 横並び可能、サイズの変更可能
+    block: 改行されるので横並び不可、サイズの変更
+    inline-block: 改行せず横並びにしたうえで、サイズの変更が可能
+*/
+
+.link-button:hover{ /* hover: マウスカーソルを上に置いたときに反応*/
+  background-color: #d8b500;
+}
+
+.recommended{
+  background-color: #f8f8f8;
+  padding-top: 45px;
+  padding-bottom: 55px;
+}
+
+.recommended h2{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.recommended h2::after{
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background-color: #000000;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item-list{
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  overflow: scroll;
+}
+
+.item-list li{
+  flex-shrink: 0;
+  width: 260px;
+  margin-left: 75px;
+}
+
+.item-list li:first-child{
+  margin-left: 0;
+}
+
+.item-list dl{
+  margin-top: 20px;
+}
+
+.item-list dt{
+  font-weight: bold;
+}
+
+.item-list dd{
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+.item-list .price{
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+@media (max-width: 800px){ /*スマホ用*/
+  .first-view {
+    height: calc(100vh - 50px);
+    background-image: url(../images/index/bg-main-sp.jpg);
+    align-items: flex-start;
+  }
+
+  .first-view-text{
+    padding-top: 60px;
+    padding-left: 20px;
+  }
+
+  .first-view-text h1{
+    font-size: 36px;
+    line-height: 48px;
+  }
+  
+  .first-view-text p{
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  .lead{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .lead p{
+    text-align: left; /*文字を左揃え*/
+  }
+
+  .item-list{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .item-list li{
+    width: 220px;
+    margin-left: 30px;
+  }
+}

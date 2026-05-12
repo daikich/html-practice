@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- リセットcss 
+      SafariやChromeなどのブラウザで適用されているデフォルトのスタイルをリセットするためのcss
+      主に2種類存在する
+       ・リセットcss：cssを完璧にリセット
+       ・ノーマライズcss：どのブラウザで開いても同じデザインになるようにデフォルトのスタイルを調整
+      最初にリセットcssを記述し、そのあとにオリジナルのcssを適用する（リセットcssで上書きされてしまうため）
+     -->
+  <link rel="stylesheet" href="./demo01.css">
+  <!-- ↓ にCDN経由でjQueryを読み込む -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!-- jsファイルの読み込み -->
+  <script src="./main.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>jQuery実験ページ</h1>
+  </header>
+
+  <main>
+    <div id="container">
+      <h1>id: container</h1>
+
+      <div class="flexbox">
+        <div class="div01">
+          <h2>class: div01</h2>
+        </div>
+
+        <div class="div02">
+          <h2>class: div02</h2>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p><small>&copy;鎌田峻輔</small></p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* paddingとborderの値を含めて計算 */
+}
+
+ul,
+ol {
+  list-style: none; /* 箇条書きの・を消す */
+}
+
+a {
+  color: inherit; /* 親要素の色を引き継ぐ */
+  text-decoration: none; /* 文字の装飾'_'(アンダーバー)を消す */
+}
+
+body {
+  font-family: sans-serif; /* フォントを指定 */
+  font-size: 16px; /* フォントのサイズを指定 */
+  color: #000000; /* フォントの色を指定 */
+  line-height: 1; /* 行間を指定 */
+  background-color: #ffffff; /* 背景の色を指定 */
+}
+
+img {
+  max-width: 100%; /* 最大の横幅を指定 */
+}
+
+.header-inner { /* class名をcssで指定するときは、先頭に.をつける */
+  max-width: 1200px;
+  height: 110px; /* 高さを指定 */
+  margin-left: auto; /* 左側の余白を均等に配置 */
+  margin-right: auto; /* 右側の余白を均等に配置 */
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex; /* 要素を横並びに配置 */
+  justify-content: space-between; /* タグの中の要素を均等に配置 */
+  align-items: center; /* 要素の配置と逆方向で中央ぞろえ(今回は縦方向) */
+}
+
+.toggle-menu-button {
+  display: none; /* 非表示にする */
+}
+
+.header-logo {
+  display: block; /* P.188参照 サイズを変更できるようにする */
+  width: 170px; /* 横幅の指定 */
+}
+
+.site-menu ul { /* class:site-menuの中にある ul に対してデザインを指定 */
+  display: flex;
+}
+
+.site-menu ul li {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.site-menu ul li a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.footer {
+  color: #ffffff;
+  background-color: #24211b;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column; /* flexの並びを縦並びに変更 */
+  align-items: center; /* 縦方向に並んでいるので、横方向に中央ぞろえ */
+}
+
+.footer-logo {
+  display: block;
+  width: 235px;
+  margin-top: 90px;
+}
+
+.footer-tel {
+  font-size: 26px;
+  font-weight: bold; /* 文字の太さを指定 */
+  margin-top: 28px;
+}
+
+.footer-time {
+  font-size: 13px;
+  margin-top: 16px;
+}
+
+.copyright {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 90px;
+}
+
+/* 800px以下の時に適用する */
+@media (max-width: 800px) {
+  /* {}の中に記述を行う */
+  .site-menu ul {
+    display: block;
+    text-align: center;
+  }
+
+  .site-menu li {
+    margin-top: 20px;
+  }
+
+  .header {
+    position: fixed; /*表示される位置を固定*/
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    height: 50px;
+    /* レイヤー分けの概念 */
+    z-index: 10; /*要素ｇ￥の重なってる順番を指定*/
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+    position: relative; /*absolteに対しての基準位置*/
+  }
+
+  .header-logo {
+    width: 100px;
+  }
+
+  .header-site-menu {
+    position: absolute; /*.header-innerを基準位置として配置*/
+    top: 100%; /*.header-innerの高さ分下に移動*/
+    left: 0;
+    right: 0;
+    color: #ffffff;
+    background-color: #736E62;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    display: none;
+  }
+
+  .toggle-menu-button {
+    display: block; /*none(非表示) -> block(表示)*/
+    width: 44px;
+    height: 34px;
+    background-image: url(../images/common/icon-menu.png);
+    background-size: 50%; /*解像度を維持するために大きい画像を表示*/
+    background-position: center; /*背景画像を中央ぞろえ*/
+    background-repeat: no-repeat; /*背景画像を繰り返さない*/
+    background-color: transparent; /*背景色を透明にする*/
+    border: none; /*境界線をなくす*/
+    border-radius: 0; /*角丸にしない*/
+    outline: none; /*タップした時の枠線を削除*/
+  }
+
+  /* ハンバーガーメニューをクリックすると、class: is-showが付与 */
+  .header-site-menu.is-show {
+    display: block;
+  }
+
+  .main {
+    padding-top: 50px;
+  }
+
+  .footer-logo {
+    margin-top: 60px;
+  }
+  
+  .footer-tel {
+    font-size: 20px;
+  }
+
+  .copyright {
+    margin-top: 50px;
+  }
+}
